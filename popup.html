@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 14px;
+      margin: 0;
+      font-size: 14px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #222;
+      background: #fff;
+    }
+
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 112px;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #dcdfe6;
+      border-radius: 6px;
+      resize: vertical;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    button:hover {
+      filter: brightness(0.96);
+    }
+
+    #saveBtn {
+      background: #1f78d1;
+    }
+
+    #rescanBtn {
+      background: #2f8f46;
+    }
+
+    .hit-item {
+      display: block;
+      width: 100%;
+      margin-top: 6px;
+      padding: 8px;
+      color: #222;
+      text-align: left;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      word-break: break-word;
+    }
+
+    .hit-item:hover {
+      border-color: #f03e3e;
+      filter: none;
+    }
+
+    .hit-title,
+    .hit-keywords,
+    .hit-snippet {
+      display: block;
+      line-height: 1.45;
+    }
+
+    .hit-title {
+      color: #c92a2a;
+      font-weight: 700;
+    }
+
+    .hit-keywords {
+      margin-top: 2px;
+      color: #555;
+      font-size: 12px;
+    }
+
+    .hit-snippet {
+      margin-top: 3px;
+      color: #666;
+      font-size: 12px;
+    }
+
+    .no-hit {
+      color: #666;
+      padding: 6px 0;
+    }
+
+    hr {
+      margin: 14px 0;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <h3>自定义敏感关键字</h3>
+  <textarea id="keywordsInput" placeholder="普通词：maxlength
+普通词：password
+正则：/^1[3-9]\d{9}$/
+一行一个，正则请使用 /pattern/ 格式"></textarea>
+
+  <button id="saveBtn">保存关键字</button>
+  <button id="rescanBtn">立即重新扫描</button>
+
+  <hr>
+  <h3>当前页面命中结果</h3>
+  <div id="resultBox">加载中...</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
